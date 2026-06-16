@@ -400,70 +400,88 @@ body {
     box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
 }
 
-.min-vh-75 {
-    min-height: 75vh;
+.home-wrapper {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
 }
-
+.home-wrapper .row {
+    width: 100%;
+    margin: 0;
+}
 .glass-card {
     background: var(--card-bg) !important;
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
     border: 1px solid var(--card-border);
-    border-radius: 30px !important;
+    border-radius: 24px !important;
     box-shadow: var(--shadow);
     transition: var(--transition);
 }
-
 .glass-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
-
 .text-gradient {
     background: linear-gradient(135deg, #4e73df, #224abe);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-
 [data-theme="dark"] .text-gradient {
     background: linear-gradient(135deg, #6c8cff, #4e73df);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-
-.btn-lg {
-    border-radius: 50px !important;
+.btn-md {
+    border-radius: 40px !important;
+    padding: 0.5rem 1.2rem;
     font-weight: 600;
+    font-size: 0.9rem;
     transition: var(--transition);
 }
-
-.btn-lg:hover {
+.btn-md:hover {
     transform: scale(1.03);
-    box-shadow: 0 8px 25px rgba(78, 115, 223, 0.3);
+    box-shadow: 0 6px 20px rgba(78, 115, 223, 0.25);
 }
-
 .btn-outline-primary {
     color: var(--text-color);
     border-color: var(--card-border);
 }
-
 .btn-outline-primary:hover {
     background: rgba(78, 115, 223, 0.1);
     border-color: #4e73df;
     color: #4e73df;
 }
-
-[data-theme="dark"] .btn-outline-secondary {
-    color: #e0e0e0;
-    border-color: rgba(255,255,255,0.2);
+.display-5 {
+    font-size: 2.2rem;
 }
-
-[data-theme="dark"] .btn-outline-secondary:hover {
-    background: rgba(255,255,255,0.1);
+/* موبایل: ویجت‌ها زیر هم */
+@media (max-width: 768px) {
+    .home-wrapper {
+        min-height: auto;
+        padding: 1rem 0;
+    }
+    .home-wrapper .row {
+        flex-direction: column;
+    }
+    .home-wrapper .col-lg-6 {
+        margin-bottom: 1rem;
+    }
+    .display-5 {
+        font-size: 1.8rem;
+    }
+    .glass-card {
+        padding: 1rem !important;
+    }
 }
-
-.card .display-4 {
-    font-size: 2.5rem;
+@media (min-width: 992px) {
+    .home-wrapper {
+        min-height: 90vh;
+    }
+    .col-lg-6 .glass-card {
+        min-height: 380px;
+    }
 }
